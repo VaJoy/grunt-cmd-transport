@@ -11,7 +11,7 @@ exports.init = function(grunt) {
   return {
     jsParser: jsParser
   };
-
+  var fileCache = {};
   function jsParser(fileObj, options) {
     grunt.log.verbose.writeln('Transport ' + fileObj.src + ' -> ' + fileObj.dest);
 
@@ -29,7 +29,7 @@ exports.init = function(grunt) {
     //     hash: md5(contents, [])
     //   }
     // }
-    var fileCache = {};
+
 
     var file = getFileInfo(path.join(process.cwd(), fileObj.src));
 
